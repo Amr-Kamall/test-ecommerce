@@ -1,0 +1,138 @@
+.cartEmpty {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+}
+
+.cartPage {
+  background-color: #ccc;
+  min-height: 91.3vh;
+}
+
+.pageWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 3rem 0;
+  gap: 3rem;
+}
+
+.orderContainer {
+  background-color: #fff;
+  padding: 1rem 1.6rem;
+  border-radius: 0.6rem;
+  animation: fade-slide-in-from-right 1s;
+}
+.cartContainer {
+  background-color: #fff;
+  padding: 1rem 1.6rem;
+  border-radius: 0.6rem;
+  animation: fade-slide-in-from-left 1s;
+}
+
+.cartRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(185, 182, 182);
+  margin: 0.9rem 0;
+}
+
+.cartRow p {
+  color: rgb(185, 182, 182);
+  font-weight: 800;
+  margin: 0.5rem 0;
+  user-select: none;
+}
+
+.cartInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(185, 182, 182);
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding-right: 5rem;
+}
+
+.quantity span {
+  background-color: rgb(216, 212, 212);
+  padding: 4px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.3rem;
+}
+
+.price {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.totalPrice {
+  display: flex;
+  justify-content: end;
+}
+
+.totalPrice p {
+  font-weight: 500;
+  font-size: 1.1rem;
+  /* margin: 0; */
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+@keyframes fade-slide-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-slide-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 874px) {
+  .pageWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 508px) {
+  .quantity {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 405px) {
+  .quantity {
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .quantity span {
+    font-size: 1rem;
+  }
+}

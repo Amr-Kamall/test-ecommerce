@@ -1,0 +1,66 @@
+.header {
+  background: #222;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.styledNav {
+  display: flex;
+  gap: 1rem;
+}
+
+.styledNav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.menuIcon {
+  height: 1.8rem;
+  width: 2rem;
+  color: #fff;
+  z-index: 100;
+  position: static;
+  right: 0.8rem;
+}
+
+nav.activeNav {
+  display: block;
+}
+.logo.fixed,
+.menuIcon.fixed {
+  position: fixed;
+}
+
+@media (max-width: 576px) {
+  .styledNav {
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    padding: 50px 20px 20px 20px;
+    background-color: #222;
+    padding-top: 4.5rem;
+    display: none;
+    overflow: hidden; /* Add this line */
+  }
+  .logo {
+    z-index: 100;
+    position: static;
+  }
+  .styledNav a {
+    display: block;
+    margin-bottom: 2rem;
+  }
+}

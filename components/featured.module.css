@@ -1,0 +1,75 @@
+.FeaturedDiv {
+  padding: 50px 0;
+  background-color: #222;
+  color: #fff;
+}
+
+.title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+.desc {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  align-items: center;
+}
+
+.img img {
+  width: 25rem;
+  height: 14rem;
+  object-fit: contain;
+}
+
+.parentBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.basketIcon {
+  height: 22px;
+}
+
+@media (max-width: 810px) {
+  .wrapper {
+    grid-template-columns: 1fr; /* Set to one column for smaller screens */
+    grid-row-gap: 40px;
+  }
+
+  .wrapper > .info {
+    order: 2;
+    /* Reverses the order of the divs inside .wrapper */
+  }
+
+  .wrapper > .img {
+    order: 1;
+    /* Reverses the order of the divs inside .wrapper */
+  }
+  .img {
+    text-align: center;
+  }
+
+  .img img {
+    max-width: 100%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 408px) {
+  .title {
+    font-size: 2rem;
+  }
+  .desc {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,112 @@
+.pageWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 3rem 0;
+  gap: 3rem;
+  align-items: center;
+}
+
+.proDetailPage {
+  background-color: #ccc;
+  min-height: 91.3vh;
+}
+
+.imgWrapper {
+  background-color: #fff;
+  border-radius: 0.7rem;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  animation: fade-slide-in-from-left 1s;
+}
+
+.imgWrapper .bigImage {
+  width: 18rem;
+  height: 9.125rem;
+  object-fit: contain;
+}
+
+.smallImages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.8rem;
+}
+
+.smallImages img {
+  width: 4rem;
+  height: 3rem;
+  object-fit: contain;
+  cursor: pointer;
+  padding: 0.4rem 0.4rem;
+}
+
+.active {
+  border: 2px solid #b9b6b6;
+  border-radius: 0.5rem;
+}
+
+.infoWrapper {
+  animation: fade-slide-in-from-right 1s;
+}
+
+.infoWrapper h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.infoWrapper .desc {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.infoWrapper .pricing {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: -1rem;
+}
+
+.basketIcon {
+  height: 1.3rem;
+  width: 1.8rem;
+}
+
+.infoWrapper .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@keyframes fade-slide-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-slide-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 669px) {
+  .pageWrapper {
+    grid-template-columns: 1fr;
+  }
+  .desc {
+    font-size: 0.8rem;
+  }
+}

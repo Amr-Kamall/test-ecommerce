@@ -1,0 +1,71 @@
+.imgWrapper a img,
+.imgWrapperBorder a img {
+  object-fit: contain;
+  width: 60%;
+  margin: auto;
+  height: 60%;
+}
+
+.imgWrapper {
+  padding: 10px;
+  width: 180px;
+  height: 150px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* flex-grow: 1; */
+}
+
+.imgWrapperBorder {
+  padding: 8px;
+  width: 150px;
+  height: 120px;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(185, 182, 182);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.productBoxImg .proName {
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 932px) {
+  .imgWrapper {
+    width: 90%;
+    padding: 18px 10px;
+  }
+  .imgWrapper a img,
+  .imgWrapperBorder a img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 546px) {
+  .imgWrapper {
+    width: 95%;
+    padding: 10px 10px;
+  }
+  .imgWrapper a img,
+  .imgWrapperBorder a img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 508px) {
+  .imgWrapperBorder {
+    /* width: 95%; */
+    width: 100px;
+    height: 80px;
+  }
+  .productBoxImg .proName {
+    font-size: 1.1rem;
+  }
+}

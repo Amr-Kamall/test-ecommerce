@@ -1,0 +1,37 @@
+.formGroup {
+  width: 100%;
+}
+.formGroup input {
+  width: 90%;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  outline: none;
+  border: 2px solid rgb(185, 182, 182);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.darkButton {
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 70%;
+  transition: all 0.2s;
+}
+
+.darkButton:hover {
+  background-color: #333;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 874px) {
+}

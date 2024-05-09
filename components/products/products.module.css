@@ -1,0 +1,29 @@
+.productsContainer {
+  background-color: #ccc;
+  padding: 2rem 0;
+}
+
+.proTitle {
+  margin: 0.8rem 0;
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.proRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 932px) {
+  .proRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 546px) {
+  .proRow {
+    grid-template-columns: 1fr;
+  }
+}
