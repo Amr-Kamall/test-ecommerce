@@ -1,11 +1,8 @@
 import Products from "../../../components/products/products";
+import { getAllProducts } from "../../../lib/products";
 
 async function AllProductsPage() {
-  const res = await fetch("http://localhost:5005/allProducts");
-  if (!res.ok) {
-    throw new Error("failed in fetch data yalaaa");
-  }
-  const allProdcuts = await res.json();
+  const allProdcuts = await getAllProducts();
   console.log(allProdcuts);
   return (
     <>

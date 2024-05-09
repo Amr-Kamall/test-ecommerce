@@ -3,10 +3,10 @@ import styles from "./page.module.css";
 import Button from "../../../../components/Button";
 import ImageWrapper from "../../../../components/products/imageWrapper";
 import CartIcon from "../../../../components/products/cartIcon";
+import { getAllProducts } from "../../../../lib/products";
 
 async function ProductDetailPage({ params }) {
-  const res = await fetch("http://localhost:5005/allProducts");
-  const allProdcuts = await res.json();
+  const allProdcuts = await getAllProducts();
   const selectedId = params.slug;
 
   const selectedProdcut = allProdcuts.find(

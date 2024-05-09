@@ -48,7 +48,7 @@
   .proInfo .priceBox {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
   .proBox {
     width: 100%;
