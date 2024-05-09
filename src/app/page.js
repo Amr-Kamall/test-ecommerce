@@ -10,6 +10,8 @@ export default async function Home() {
   return (
     <div>
       <Featured featuredItem={featuredItem} />
+      {/* <div suppressHydrationWarning></div> */}
+
       <Products products={products} proType="newArrivals" />
     </div>
   );

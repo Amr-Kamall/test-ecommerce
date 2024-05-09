@@ -1,14 +1,23 @@
 "use client";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const productContext = createContext();
 
 function ProductProvider({ children }) {
-  const [cart, setCart] = useState(function () {
-    const storedData = localStorage.getItem("cart") || [];
-    return JSON.parse(storedData);
-  });
-  console.log(cart);
+  const ls = typeof window !== "undefined" ? window.localStorage : null;
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    if (ls && ls.getItem("cart")) {
+      setCart(JSON.parse(ls.getItem("cart")));
+    }
+  }, [ls]);
+
+  useEffect(() => {
+    if (cart?.length > 0) {
+      ls?.setItem("cart", JSON.stringify(cart));
+    }
+  }, [cart, ls]);
 
   function addToCart(newProduct) {
     // Update cart state immutably by creating a new array with the newProduct added
@@ -56,12 +65,6 @@ function ProductProvider({ children }) {
       : setCart((cart) => cart.filter((item) => item.id !== id));
     updateCartPrice(id);
   }
-
-  useEffect(() => {
-    // Update local storage whenever cart state changes
-    localStorage.setItem("cart", JSON.stringify(cart));
-    // Calculate total price whenever cart state changes
-  }, [cart]);
 
   return (
     <productContext.Provider

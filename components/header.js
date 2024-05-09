@@ -49,7 +49,17 @@ function Header() {
               Account
             </Link> */}
             <Link href="/cart" onClick={() => setOpen(false)}>
-              cart ({cartLength || 0})
+              {/* <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "start",
+                }}
+              >
+                <p>cart</p>
+                <p className="loader"></p>
+              </div> */}
+              cart ({cart.length || <span className="loader"></span>})
             </Link>
           </nav>
           {isSmallScreen && (
