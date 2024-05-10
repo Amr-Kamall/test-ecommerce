@@ -1,8 +1,9 @@
 import Products from "../../../components/products/products";
-import { getAllProducts } from "../../../lib/products";
+import { allProducts } from "../../../data";
+// import { getAllProducts } from "../../../lib/products";
 
 async function AllProductsPage() {
-  const allProdcuts = await getAllProducts();
+  const allProdcuts = allProducts;
   console.log(allProdcuts);
   return (
     <>
