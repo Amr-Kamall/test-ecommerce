@@ -8,10 +8,21 @@ import MenuIcon from "./products/menuIcon";
 
 function Header() {
   const { cart } = useProducts();
-  const cartLength = cart?.length || 0;
+  const cartLength = cart.length;
   const [open, setOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [loading, setLoading] = useState(true); // Add loading state
+
   console.log(open);
+
+  useEffect(() => {
+    // When the component mounts, set loading to false after a delay to simulate page loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 100); // Adjust the delay as needed
+
+    return () => clearTimeout(timer); // Clear the timer when the component unmounts
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -49,17 +60,9 @@ function Header() {
               Account
             </Link> */}
             <Link href="/cart" onClick={() => setOpen(false)}>
-              {/* <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "start",
-                }}
-              >
-                <p>cart</p>
-                <p className="loader"></p>
-              </div> */}
-              cart ({cart.length || <span className="loader"></span>})
+              <span>
+                cart ({loading ? <span className="loader"></span> : cartLength})
+              </span>
             </Link>
           </nav>
           {isSmallScreen && (
